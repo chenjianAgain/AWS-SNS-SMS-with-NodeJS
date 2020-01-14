@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
         }
     };
 
-    var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31' }).publish(params).promise();
+    var publishTextPromise = new AWS.SNS({ "region": "us-east-1" }).publish(params).promise();
 
     publishTextPromise.then(
         function (data) {
